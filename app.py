@@ -4,12 +4,12 @@ from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 # Project Setup
 load_dotenv()
-llm_openai = ChatOpenAI(model="gpt-4.1-nano")
+llm = ChatOpenAI(model="gpt-4.1-nano")
 
 # Context Break Demonstration (Naive Invocation)
 
-resp1 = llm_openai.invoke("We are building an AI system for processing medical insurance claims.")
-resp2 = llm_openai.invoke("What are the main risks in this system?")
+resp1 = llm.invoke("We are building an AI system for processing medical insurance claims.")
+resp2 = llm.invoke("What are the main risks in this system?")
 
 print("\n----------------------------------------------\n")
 print("Response 1:", resp1.content)
@@ -28,7 +28,7 @@ messages = [
     HumanMessage(content="What are the main risks in this system?")
 ]
 
-resp3 = llm_openai.invoke(messages)
+resp3 = llm.invoke(messages)
 print("\n----------------------------------------------\n")
 print("Response 3:", resp3.content)
 
