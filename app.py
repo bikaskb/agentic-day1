@@ -9,12 +9,10 @@ llm_openai = ChatOpenAI(model="gpt-4.1-nano")
 # Context Break Demonstration (Naive Invocation)
 
 resp1 = llm_openai.invoke("We are building an AI system for processing medical insurance claims.")
+resp2 = llm_openai.invoke("What are the main risks in this system?")
+
 print("\n----------------------------------------------\n")
 print("Response 1:", resp1.content)
-
-
-resp2 = llm_openai.invoke("What are the main risks in this system?")
-print("\n----------------------------------------------\n")
 print("Response 2:", resp2.content)
 
 # Why the second question may fail or behave inconsistently without conversation history ?
